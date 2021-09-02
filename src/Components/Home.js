@@ -1,5 +1,7 @@
 import React from "react";
 import '../Assets/Home.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
 
@@ -14,7 +16,10 @@ export default function Home() {
                 <span>
                     Enter your GitHub name to get all the repositories
                 </span>
-                <input className={'home-input'} type="text" placeholder={'Ex: YassineGabsi'}/>
+                <div className={'home-input-container'}>
+                    <input className={'home-input'} type="text" placeholder={'Ex: YassineGabsi'}/>
+                    <FontAwesomeIcon className={'search-icon'} icon={ faSearch } color={'#192330'} />
+                </div>
 
             </div>
         </div>

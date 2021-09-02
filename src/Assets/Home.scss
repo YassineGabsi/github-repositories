@@ -80,21 +80,30 @@ $shadows-big: multiple-box-shadow(100);
     height: 100vh;
     flex-direction: column;
 
-    .home-input {
-      border-radius: 50px;
-      padding: 8px 40px;
+    .home-input-container {
       width: 50%;
-      color: #1B2735;
-      outline: none;
-      margin-top: 30px;
-      border: none;
-      box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-      transition: 0.3s all ease-in-out;
-    }
+      .home-input {
+        border-radius: 50px;
+        padding: 8px 40px;
+        color: #1B2735;
+        width: 100%;
+        outline: none;
+        margin-top: 30px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+        transition: 0.3s all ease-in-out;
+      }
 
-    .home-input:focus {
-      box-shadow: rgb(0, 0, 0) 0 20px 30px -10px;
-      transition: 0.3s all ease-in-out;
+      .home-input:focus {
+        box-shadow: rgb(0, 0, 0) 0 20px 30px -10px;
+        transition: 0.3s all ease-in-out;
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 53.4vh;
+        right: 27vw;
+      }
     }
   }
 }
