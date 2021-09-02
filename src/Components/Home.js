@@ -22,7 +22,9 @@ export default function Home() {
                 </span>
                 <div className={'home-input-container'}>
                     <input className={'home-input'} type="text" placeholder={'Ex: YassineGabsi'}/>
-                    <FontAwesomeIcon className={'search-icon'} icon={ faSearch } color={'#192330'} />
+                    <div className={'search-icon-container'}>
+                        <FontAwesomeIcon className={'search-icon'} icon={ faSearch } color={'#192330'} />
+                    </div>
                 </div>
 
                 <button className={'btn-custom btn-search'}>
