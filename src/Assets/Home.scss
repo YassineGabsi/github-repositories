@@ -76,9 +76,10 @@ $shadows-big: multiple-box-shadow(100);
     letter-spacing: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start;
+    height: 60vh;
     flex-direction: column;
+    padding-top: 30px;
 
     .home-input-container {
       width: 50%;
@@ -106,16 +107,18 @@ $shadows-big: multiple-box-shadow(100);
       }
     }
   }
-}
 
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
+  .github-icon-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 40vh;
+
+    .github-icon {
+      animation: animGithubIcon 5s infinite;
+    }
   }
-  to {
-    transform: translateY(-2000px);
-  }
-};
+}
 
 .btn-custom {
   padding: 10px 50px;
@@ -131,4 +134,25 @@ $shadows-big: multiple-box-shadow(100);
 .btn-custom:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transform: translateY(-10%);
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+};
+
+@keyframes animGithubIcon {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

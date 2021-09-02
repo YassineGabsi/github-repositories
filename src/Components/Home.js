@@ -1,7 +1,8 @@
 import React from "react";
 import '../Assets/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import {faSearch, } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function Home() {
 
@@ -11,6 +12,9 @@ export default function Home() {
             <div className={'stars'}/>
             <div className={'stars-second'}/>
             <div className={'stars-third'}/>
+            <div className={'github-icon-container'} >
+                <FontAwesomeIcon className={'github-icon'}  icon={ faGithub } color={'white'} size={'10x'} />
+            </div>
 
             <div className={'home-title-container'}>
                 <span>
