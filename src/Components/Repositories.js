@@ -5,16 +5,19 @@ import axios from 'axios';
 import '../Assets/Repositories.scss';
 import {faStar, faUsers, faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Repository from "./Repository";
 
 export default function Repositories() {
 
     const [githubUser, setGithubUser] = useState({});
+    const [repos, setRepos] = useState([]);
 
     const {user} = useParams();
 
     useEffect(() => {
         console.log(user);
         getUser();
+        getRepos();
 
     }, []);
 
@@ -33,6 +36,7 @@ export default function Repositories() {
         axios.get(`https://api.github.com/users/` + user + '/repos')
             .then(res => {
                 console.log(res.data);
+                setRepos(res.data);
             })
             .catch(error => {
                 console.log(error);
@@ -101,6 +105,10 @@ export default function Repositories() {
 
                     <div className={'search-input-container mt-3'}>
                         <input className={'search-input'} type="text" placeholder={'Find a repository...'}/>
+                    </div>
+
+                    <div className={'repositories-container'}>
+                        {repos.map(repo => <Repository key={repo.id} repo={repo}/> )}
                     </div>
                 </div>
             </div>
