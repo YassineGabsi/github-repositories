@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useHistory } from "react-router-dom";
 import '../Assets/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,10 +10,21 @@ export default function Home() {
     const [githubUser, setGithubUser] = useState('');
     const history = useHistory();
 
-    const redirectToGithubRepositories = () => {
-        history.push('/repositories/' + githubUser);
-    }
+    useEffect(() => {
+        const input = document.getElementsByClassName('home-input')[0];
+        console.log(input);
 
+        input.addEventListener('keyup', function (event) {
+            if (event.keyCode === 13) {
+                const button = document.getElementsByClassName('btn-search')[0];
+                button.click();
+            }
+        })
+    }, []);
+
+    const redirectToGithubRepositories = () => {
+        if (githubUser !== '') history.push('/repositories/' + githubUser);
+    }
 
     return (
         <div className={'home-container'}>

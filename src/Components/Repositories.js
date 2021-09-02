@@ -11,6 +11,7 @@ export default function Repositories() {
 
     const [githubUser, setGithubUser] = useState({});
     const [repos, setRepos] = useState([]);
+    const [filteredRepos, setFilteredRepos] = useState([]);
 
     const {user} = useParams();
 
@@ -20,6 +21,18 @@ export default function Repositories() {
         getRepos();
 
     }, []);
+
+    function searchRepo(e)  {
+        const searchLabel = e.target.value.toLowerCase();
+        if (searchLabel === '') {
+            setFilteredRepos(repos);
+        } else {
+            const tempRepos = repos.filter(repo => repo.name.includes(searchLabel));
+            setFilteredRepos(tempRepos)
+            console.log(e.target.value);
+        }
+
+    }
 
     const getUser = () => {
         axios.get(`https://api.github.com/users/` + user)
@@ -37,6 +50,7 @@ export default function Repositories() {
             .then(res => {
                 console.log(res.data);
                 setRepos(res.data);
+                setFilteredRepos(res.data);
             })
             .catch(error => {
                 console.log(error);
@@ -104,11 +118,14 @@ export default function Repositories() {
                     </div>
 
                     <div className={'search-input-container mt-3'}>
-                        <input className={'search-input'} type="text" placeholder={'Find a repository...'}/>
+                        <input className={'search-input'}
+                               onChange={(e) => searchRepo(e)}
+                               type="text"
+                               placeholder={'Find a repository...'}/>
                     </div>
 
                     <div className={'repositories-container'}>
-                        {repos.map(repo => <Repository key={repo.id} repo={repo}/> )}
+                        {filteredRepos.map(repo => <Repository key={repo.id} repo={repo}/> )}
                     </div>
                 </div>
             </div>
