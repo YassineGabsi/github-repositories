@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 import '../Assets/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faSearch, } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
     const history = useHistory();
 
     const redirectToGithubRepositories = () => {
-        history.push('/' + githubUser);
+        history.push('/repositories/' + githubUser);
     }
 
 
