@@ -79,7 +79,7 @@ $shadows-big: multiple-box-shadow(100);
     justify-content: flex-start;
     height: 60vh;
     flex-direction: column;
-    padding-top: 30px;
+    padding: 30px 15px 5px 15px;
 
     .home-input-container {
       width: 50%;
@@ -156,5 +156,23 @@ $shadows-big: multiple-box-shadow(100);
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .home-container {
+    .home-title-container {
+      font-size: 17px;
+
+      .home-input-container {
+        width: 90%;
+      }
+
+      .btn-custom {
+        font-size: 15px;
+      }
+    }
   }
 }
