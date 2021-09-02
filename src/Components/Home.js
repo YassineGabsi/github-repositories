@@ -21,6 +21,10 @@ export default function Home() {
                     <FontAwesomeIcon className={'search-icon'} icon={ faSearch } color={'#192330'} />
                 </div>
 
+                <button className={'btn-custom btn-search'}>
+                    Start searching !
+                </button>
+
             </div>
         </div>
     );
