@@ -43,3 +43,12 @@ a:hover {
   display: block;
   margin-right: 7px;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

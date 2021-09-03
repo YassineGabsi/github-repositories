@@ -3,6 +3,8 @@
   height: 100vh;
   padding: 40px;
   .container {
+    animation: fadeIn 1s;
+    opacity: 1;
     display: flex;
     .user-infos-container {
       background-color: #FFFFFF;
