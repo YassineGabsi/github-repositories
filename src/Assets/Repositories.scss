@@ -126,6 +126,10 @@
         overflow-y: scroll;
         height: 80%;
         margin-top: 20px;
+
+        .no-repos {
+          text-align: center;
+        }
       }
     }
   }

@@ -133,7 +133,14 @@ export default function Repositories() {
                             </div>
 
                             <div className={'repositories-container'}>
-                                {filteredRepos.map(repo => <Repository key={repo.id} repo={repo}/> )}
+                                {
+                                    filteredRepos.length ? (
+                                        filteredRepos.map(repo => <Repository key={repo.id} repo={repo}/> )
+                                    ) : (
+                                        <div className={'no-repos'}>No repositories found.</div>
+                                    )
+                                }
+                                {}
                             </div>
                         </div>
                     </div>
