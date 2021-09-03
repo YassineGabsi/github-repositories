@@ -30,20 +30,20 @@ export default function Repository(props) {
                 }
 
                 {
-                    props.repo.forks && <div className={'repo-forks mx-2'}>
+                    props.repo.forks > 0 ?  <div className={'repo-forks'}>
                         <FontAwesomeIcon className={'icon-followers me-2'} icon={faProjectDiagram} color={'#000000'} size={'sm'}/>
                         {props.repo.forks}
-                    </div>
+                    </div> : null
                 }
 
                 {
-                    props.repo.licence && <div className={'repo-licence mx-2'}>
+                    props.repo.license && <div className={'repo-licence'}>
                         <FontAwesomeIcon className={'icon-followers me-2'} icon={faCertificate} color={'#000000'} size={'sm'}/>
-                        {props.repo.forks}
+                        {props.repo.license.name}
                     </div>
                 }
 
-                <div className={'repo-updated-on mx-3'}>
+                <div className={'repo-updated-on'}>
                     Updated at {formatDate(props.repo.updated_at)}
                 </div>
             </div>

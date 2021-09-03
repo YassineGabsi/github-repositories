@@ -23,8 +23,20 @@
     display: flex;
     font-size: 13px;
     opacity: 0.7;
-    .repo-language {
+    .repo-language, .repo-forks, .repo-licence, .repo-updated-on {
+      margin-right: 10px;
+    }
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .repo-card {
+    .repo-name {
+      font-size: 18px;
+    }
+
+    .repo-card-footer {
+      flex-wrap: wrap;
     }
   }
 }

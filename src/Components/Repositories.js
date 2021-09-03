@@ -27,7 +27,7 @@ export default function Repositories() {
         if (searchLabel === '') {
             setFilteredRepos(repos);
         } else {
-            const tempRepos = repos.filter(repo => repo.name.includes(searchLabel));
+            const tempRepos = repos.filter(repo => repo.name.toLowerCase().includes(searchLabel));
             setFilteredRepos(tempRepos)
             console.log(e.target.value);
         }
@@ -60,7 +60,7 @@ export default function Repositories() {
     return (
         <div className={'repos-container'}>
             <div className={'container'}>
-                <div className={'user-infos-container col-3 me-4'}>
+                <div className={'user-infos-container col-md-3 col-12 me-4'}>
                     <div className={'user-avatar-container'}>
                         <img className={'user-avatar img-fluid'} src={githubUser.avatar_url} alt=""/>
                     </div>
@@ -103,17 +103,13 @@ export default function Repositories() {
                         </div>
                     </div>
                 </div>
-                <div className={'user-repos-container col-9'}>
+                <div className={'user-repos-container col-md-9 col-12'}>
                     <div className={'user-repos-header'}>
                         <div className={'text-container'}>
                             <div className={'text'}>
                                 Repositories
                             </div>
                             <div className={'underline-decoration'}/>
-                        </div>
-
-                        <div className={'filters'}>
-                            aa
                         </div>
                     </div>
 

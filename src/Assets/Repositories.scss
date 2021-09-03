@@ -31,16 +31,19 @@
         .user-name {
           font-size: 27px;
           font-weight: bold;
+          text-align: center;
         }
 
         .user-login {
           font-size: 20px;
           opacity: 0.7;
+          text-align: center;
         }
 
         .user-bio {
           font-size: 20px;
           margin-top: 25px;
+          text-align: center;
         }
 
         .user-followers-container {
@@ -124,4 +127,53 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .repos-container {
+    padding: 20px;
+    height: auto;
+    .container {
+      display: block;
+
+      .user-infos-container {
+        height: auto;
+        margin-bottom: 20px;
+
+        .user-avatar-container {
+          .user-avatar {
+            max-height: 100px;
+          }
+        }
+
+        .user-infos {
+          font-size: 16px;
+
+          .user-name {
+            font-size: 18px;
+          }
+
+          .user-login {
+            font-size: 16px;
+          }
+
+          .user-bio {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .user-repos-container {
+        padding: 20px 30px;
+        .user-repos-header {
+          .text-container {
+            .text {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
