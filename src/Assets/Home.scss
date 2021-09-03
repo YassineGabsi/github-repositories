@@ -126,22 +126,6 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 
-.btn-custom {
-  padding: 10px 50px;
-  margin: 50px 5px;
-  border-radius: 50px;
-  border: none;
-  background: linear-gradient(213deg, rgba(226,150,156,1) 2%, rgba(232,80,91,1) 100%);
-  color: #FFFFFF;
-  font-size: 20px;
-  transition: 0.3s all ease-in-out;
-}
-
-.btn-custom:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transform: translateY(-10%);
-}
-
 @keyframes animStar {
   from {
     transform: translateY(0px);

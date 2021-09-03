@@ -1,0 +1,14 @@
+.not-found-container {
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+
+  .not-found-label {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: bold;
+    animation: fadeIn 1s;
+    opacity: 1;
+  }
+}

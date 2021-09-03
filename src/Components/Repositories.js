@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 import axios from 'axios';
 
 import '../Assets/Repositories.scss';
@@ -17,12 +17,12 @@ export default function Repositories() {
     const [isLoading, setIsLoading] = useState(true);
 
     const {user} = useParams();
+    const history = useHistory();
 
     useEffect(() => {
         console.log(user);
         getUser();
         getRepos();
-
     }, []);
 
     function searchRepo(e)  {
@@ -43,7 +43,7 @@ export default function Repositories() {
                 setGithubUser(res.data);
             })
             .catch(error => {
-                console.log(error);
+                history.push('/404');
             });
     }
 
