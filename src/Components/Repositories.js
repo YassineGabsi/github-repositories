@@ -20,11 +20,23 @@ export default function Repositories() {
     const history = useHistory();
 
     useEffect(() => {
-        console.log(user);
+        /**
+         * When the component mounts, it fetches the user infos and
+         * the repositories of the given users through these functions
+         * - getUser : fetches the user infos from the Github API
+         * - getRepos : fetches the user repositories from the Github API
+         */
         getUser();
         getRepos();
     }, []);
 
+    /**
+     * On changing the search input value, this function is called.
+     * It's responsible of filtering the repos using the specific repo name
+     * - searchLabel: the search repos name
+     * - tempRepos: a temporary array to get the filtered repos from the original set of repos
+     * - setFilteredRepos() : sets the new array of repos
+     */
     function searchRepo(e)  {
         const searchLabel = e.target.value.toLowerCase();
         if (searchLabel === '') {
@@ -32,7 +44,6 @@ export default function Repositories() {
         } else {
             const tempRepos = repos.filter(repo => repo.name.toLowerCase().includes(searchLabel));
             setFilteredRepos(tempRepos)
-            console.log(e.target.value);
         }
 
     }

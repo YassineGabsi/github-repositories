@@ -11,8 +11,12 @@ export default function Home() {
     const history = useHistory();
 
     useEffect(() => {
+
+        /**
+         *  This event listener enables the search on clicking on "Enter' button.
+         */
+
         const input = document.getElementsByClassName('home-input')[0];
-        console.log(input);
 
         input.addEventListener('keyup', function (event) {
             if (event.keyCode === 13) {
@@ -22,6 +26,12 @@ export default function Home() {
         })
     }, []);
 
+    /**
+     * After giving the username of the github page, this function redirects
+     * to the appropriate github repositories for that user .
+     * We are using the react built-in 'useHistory' function to make the redirection
+     */
+
     const redirectToGithubRepositories = () => {
         if (githubUser !== '') history.push('/repositories/' + githubUser);
     }
@@ -29,9 +39,15 @@ export default function Home() {
     return (
         <div className={'home-container'}>
 
+            {/**
+             * These divs are to display the background animation in the home page
+             * ( the animated stars in the background )
+             * there is 3 layers of stars, each layer has its own pace of speed.
+             */}
             <div className={'stars'}/>
             <div className={'stars-second'}/>
             <div className={'stars-third'}/>
+
             <div className={'github-icon-container'} >
                 <FontAwesomeIcon className={'github-icon'}  icon={ faGithub } color={'white'} size={'10x'} />
             </div>

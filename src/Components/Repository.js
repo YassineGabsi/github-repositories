@@ -5,6 +5,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function Repository(props) {
 
+    /**
+     * The date fetched from the Github API is in YYYY-MM-DD HH:MM:SS
+     * In that case, the date should be formatted in a readable format
+     * This function ( formatDate ) is responsible of formatting the date
+     */
+
     const formatDate = (date) => {
         const  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         const dateFormatted = new Date(date)
